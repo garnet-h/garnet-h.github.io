@@ -6,16 +6,20 @@
     <title>جارنيت.إتش - تصميم داخلي</title>
     <style>
         :root {
-            --primary: #2E8B57; /* Garnet green */
+            --primary: #2E8B57;
             --secondary: #9A2B2B;
             --light: #f8f9fa;
             --dark: #212529;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--dark);
         }
         header {
             background: white;
@@ -31,9 +35,27 @@
             margin: 0 auto;
             padding: 0 15px;
         }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .logo {
-            height: 60px; /* Increased logo size */
-            width: auto; /* Maintain aspect ratio */
+            height: 60px;
+            width: auto;
+        }
+        .lang-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .lang-btn:hover {
+            background: var(--primary);
+            color: white;
         }
         .hero {
             background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.9)), url('hero-bg.jpg');
@@ -44,22 +66,110 @@
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: 80px;
+            margin-top: 90px;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        .contact-info {
+            margin: 15px 0;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <!-- Logo with absolute path -->
-            <img src="https://github.com/garnet-h/garnet-h.github.io/blob/main/logo.png?raw=true" 
-                 alt="شعار جارنيت.إتش" 
-                 class="logo"
-                 style="height: 60px; width: auto;">
-            <a href="index.html" style="color: #2E8B57; font-weight: 600; text-decoration: none; border: 2px solid #2E8B57; padding: 5px 15px; border-radius: 20px;">English</a>
+        <div class="container nav-container">
+            <img src="logo.png" alt="شعار جارنيت.إتش" class="logo">
+            <a href="index.html" class="lang-btn">English</a>
         </div>
     </header>
 
-    <!-- Rest of your Arabic content -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>صمم منزل أحلامك</h1>
+            <p>حول أي غرفة باستخدام تطبيق التصميم الداخلي الخاص بنا. احصل على عروض أسعار مخصصة من مصممين محترفين.</p>
+            <a href="https://wa.me/966543939639" class="whatsapp-btn">تواصل عبر واتساب</a>
+        </div>
+    </section>
+
+    <!-- Design Gallery -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">تصاميمنا الحديثة</h2>
+            <div class="gallery">
+                <img src="design1.jpg" alt="تصميم غرفة معيشة عصرية">
+                <img src="design2.jpg" alt="تصميم غرفة نوم أنيقة">
+                <img src="design3.jpg" alt="تصميم مطبخ عصري">
+                <img src="design4.jpg" alt="تصميم حمام فاخر">
+                <img src="design5.jpg" alt="تصميم غرفة أطفال">
+                <img src="design6.jpg" alt="تصميم مكتب منزلي">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <a href="tel:0543939639">٠٥٤ ٣٩٣ ٩٦٣٩</a> | 
+                <a href="mailto:info@garnet-h.com">info@garnet-h.com</a>
+            </div>
+            <p>© ٢٠٢٣ جارنيت.إتش - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
 </body>
 </html>
