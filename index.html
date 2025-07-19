@@ -39,11 +39,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .logo {
             height: 150px;
             width: auto;
-            max-width: 400px;
+            max-width: 100%;
             transition: all 0.3s;
         }
         .logo:hover {
@@ -51,14 +52,17 @@
         }
         nav {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         nav a {
             color: var(--dark);
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
+            padding: 8px 12px;
             transition: all 0.3s;
+            white-space: nowrap;
         }
         nav a:hover {
             color: var(--primary);
@@ -71,13 +75,14 @@
             border: 2px solid var(--primary);
             border-radius: 20px;
             transition: all 0.3s;
+            margin-left: 10px;
         }
         .lang-btn:hover {
             background: var(--primary);
             color: white;
         }
         .hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.9)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.9)), url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -85,18 +90,24 @@
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: 180px;
+            margin-top: 150px;
         }
-        /* Fallback background if image fails */
-        .hero {
-            background-color: var(--primary);
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 140px;
+                background-position: 60% center;
+            }
+            .logo {
+                height: 120px;
+            }
         }
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
         }
         .whatsapp-btn {
@@ -115,13 +126,13 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: var(--primary);
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         .about-content {
             max-width: 800px;
@@ -129,11 +140,13 @@
             text-align: center;
             font-size: 1.1rem;
             line-height: 1.8;
+            padding: 0 15px;
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 15px;
         }
         .gallery-item {
             position: relative;
@@ -157,8 +170,8 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            margin: 40px auto;
             max-width: 800px;
+            margin: 30px auto;
             border-radius: 8px;
             background: #000;
         }
@@ -170,20 +183,12 @@
             height: 100%;
             border: none;
         }
-        .video-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--light);
-            color: var(--dark);
-            font-weight: bold;
-            height: 100%;
-        }
         footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
+            margin-top: 40px;
         }
         .contact-info {
             margin: 15px 0;
@@ -197,12 +202,8 @@
 <body>
     <header>
         <div class="container nav-container">
-            <!-- Local logo file with fallback text -->
-            <div style="display: flex; align-items: center;">
-                <img src="images/logo.png" alt="GARNET.H Logo" class="logo" 
-                     onerror="this.onerror=null; this.style.display='none'; document.getElementById('logo-fallback').style.display='block'">
-                <h1 id="logo-fallback" style="display: none; color: var(--primary);">GARNET.H</h1>
-            </div>
+            <img src="logo.png" alt="GARNET.H Logo" class="logo" 
+                 onerror="this.src='placeholder.jpeg'">
             <nav>
                 <a href="index.html">Home</a>
                 <a href="#about">About Us</a>
@@ -234,42 +235,28 @@
             <h2 class="section-title">Our Design Showcase</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="images/design1.jpg" alt="Modern Living Room" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="design1.jpg" alt="Modern Living Room" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/design2.jpg" alt="Elegant Bedroom" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="design2.jpg" alt="Elegant Bedroom" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/design3.jpg" alt="Contemporary Kitchen" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="NEW-DESIGN3.jpg" alt="Contemporary Kitchen" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/design4.jpg" alt="Luxury Bathroom" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="design4.jpg" alt="Luxury Bathroom" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/design5.jpg" alt="Children's Room" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="design5.jpg" alt="Children's Room" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/design6.jpg" alt="Home Office" loading="lazy"
-                         onerror="this.src='images/placeholder.jpg'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">Our Design Process</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" 
-                        allowfullscreen
-                        title="GARNET.H Design Process Video"></iframe>
-                <div class="video-placeholder" style="display: none;">
-                    Video loading failed. <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">Watch on YouTube</a>
+                    <img src="design6.jpg" alt="Home Office" loading="lazy"
+                         onerror="this.src='placeholder.jpeg'">
                 </div>
             </div>
         </div>
@@ -284,13 +271,5 @@
             <p>© 2023 GARNET.H - All Rights Reserved</p>
         </div>
     </footer>
-
-    <script>
-        // Fallback for video
-        document.querySelector('iframe').onerror = function() {
-            this.style.display = 'none';
-            document.querySelector('.video-placeholder').style.display = 'flex';
-        };
-    </script>
 </body>
 </html>
