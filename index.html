@@ -41,12 +41,27 @@
             align-items: center;
         }
         .logo {
-            height: 120px; /* Increased logo size */
+            height: 150px; /* Larger logo */
             width: auto;
+            max-width: 400px;
             transition: all 0.3s;
         }
         .logo:hover {
             transform: scale(1.05);
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
         }
         .lang-btn {
             color: var(--primary);
@@ -62,7 +77,7 @@
             color: white;
         }
         .hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.9)), url('hero-bg.jpg');
+            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.9)), url('https://i.ibb.co/your-code/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -70,7 +85,7 @@
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: 150px; /* Adjusted for larger logo */
+            margin-top: 180px; /* Adjusted for larger logo */
         }
         .hero-content {
             max-width: 800px;
@@ -104,6 +119,13 @@
             color: var(--primary);
             font-size: 2rem;
         }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -118,24 +140,6 @@
         .gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 40px 0;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .video-container iframe,
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
         }
         footer {
             background: var(--primary);
@@ -155,7 +159,12 @@
 <body>
     <header>
         <div class="container nav-container">
-            <img src="logo.png" alt="GARNET.H Logo" class="logo">
+            <img src="https://i.ibb.co/your-logo-code/logo.png" alt="GARNET.H Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#gallery">Gallery</a>
+            </nav>
             <a href="ar.html" class="lang-btn">العربية</a>
         </div>
     </header>
@@ -163,37 +172,30 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Design Your Dream Home</h1>
-            <p>Transform any room with our intuitive interior design app. Get customized quotes from professional designers.</p>
+            <p>Transform any room with our intuitive interior design app</p>
             <a href="https://wa.me/966543939639" class="whatsapp-btn">Chat on WhatsApp</a>
         </div>
     </section>
 
-    <section class="section">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">Our Design Showcase</h2>
-            <div class="gallery">
-                <img src="design1.jpg" alt="Modern Living Room">
-                <img src="design2.jpg" alt="Elegant Bedroom">
-                <img src="NEW-DESIGN3.jpg" alt="Contemporary Kitchen">
-                <img src="design4.jpg" alt="Luxury Bathroom">
-                <img src="design5.jpg" alt="Children's Room">
-                <img src="design6.jpg" alt="Home Office">
+            <h2 class="section-title">About Garnet.H</h2>
+            <div class="about-content">
+                <p>Garnet.H is an interior design app for home rooms, including bedrooms, children's rooms, living rooms, and even kitchens. You can specify details such as materials, colors, electrical appliances, lighting, and more. The design is executed after you review and approve one of the quotes provided by the designers.</p>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: var(--light);">
+    <section id="gallery" class="section">
         <div class="container">
-            <h2 class="section-title">See Our Process</h2>
-            <div class="video-container">
-                <!-- Replace VIDEO_ID with your YouTube ID or use the commented video tag -->
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" allowfullscreen></iframe>
-                <!-- OR for self-hosted:
-                <video controls poster="video-preview.jpg">
-                    <source src="design-video.mp4" type="video/mp4">
-                    Your browser doesn't support HTML5 video.
-                </video>
-                -->
+            <h2 class="section-title">Our Design Showcase</h2>
+            <div class="gallery">
+                <img src="https://i.ibb.co/your-code/design1.jpg" alt="Modern Living Room" loading="lazy">
+                <img src="https://i.ibb.co/your-code/design2.jpg" alt="Elegant Bedroom" loading="lazy">
+                <img src="https://i.ibb.co/your-code/NEW-DESIGN3.jpg" alt="Contemporary Kitchen" loading="lazy">
+                <img src="https://i.ibb.co/your-code/design4.jpg" alt="Luxury Bathroom" loading="lazy">
+                <img src="https://i.ibb.co/your-code/design5.jpg" alt="Children's Room" loading="lazy">
+                <img src="https://i.ibb.co/your-code/design6.jpg" alt="Home Office" loading="lazy">
             </div>
         </div>
     </section>
