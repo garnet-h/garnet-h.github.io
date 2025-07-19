@@ -6,7 +6,7 @@
     <title>GARNET.H - Interior Design</title>
     <style>
         :root {
-            --primary: #2E8B57; /* Garnet green */
+            --primary: #2E8B57;
             --secondary: #9A2B2B;
             --light: #f8f9fa;
             --dark: #212529;
@@ -41,8 +41,12 @@
             align-items: center;
         }
         .logo {
-            height: 60px;
+            height: 120px; /* Increased logo size */
             width: auto;
+            transition: all 0.3s;
+        }
+        .logo:hover {
+            transform: scale(1.05);
         }
         .lang-btn {
             color: var(--primary);
@@ -66,7 +70,7 @@
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: 90px;
+            margin-top: 150px; /* Adjusted for larger logo */
         }
         .hero-content {
             max-width: 800px;
@@ -92,32 +96,52 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: var(--primary);
+            font-size: 2rem;
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
         .gallery img {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
         .gallery img:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
         }
         .contact-info {
             margin: 15px 0;
@@ -129,7 +153,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container nav-container">
             <img src="logo.png" alt="GARNET.H Logo" class="logo">
@@ -137,7 +160,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Design Your Dream Home</h1>
@@ -146,29 +168,43 @@
         </div>
     </section>
 
-    <!-- Design Gallery -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Our Recent Designs</h2>
+            <h2 class="section-title">Our Design Showcase</h2>
             <div class="gallery">
-                <img src="design1.jpg" alt="Modern Living Room Design">
-                <img src="design2.jpg" alt="Elegant Bedroom Design">
-                <img src="design3.jpg" alt="Contemporary Kitchen Design">
-                <img src="design4.jpg" alt="Luxury Bathroom Design">
-                <img src="design5.jpg" alt="Children's Room Design">
-                <img src="design6.jpg" alt="Home Office Design">
+                <img src="design1.jpg" alt="Modern Living Room">
+                <img src="design2.jpg" alt="Elegant Bedroom">
+                <img src="NEW-DESIGN3.jpg" alt="Contemporary Kitchen">
+                <img src="design4.jpg" alt="Luxury Bathroom">
+                <img src="design5.jpg" alt="Children's Room">
+                <img src="design6.jpg" alt="Home Office">
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">See Our Process</h2>
+            <div class="video-container">
+                <!-- Replace VIDEO_ID with your YouTube ID or use the commented video tag -->
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" allowfullscreen></iframe>
+                <!-- OR for self-hosted:
+                <video controls poster="video-preview.jpg">
+                    <source src="design-video.mp4" type="video/mp4">
+                    Your browser doesn't support HTML5 video.
+                </video>
+                -->
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="contact-info">
                 <a href="tel:0543939639">054 393 9639</a> | 
                 <a href="mailto:info@garnet-h.com">info@garnet-h.com</a>
             </div>
-            <p>© 2024 GARNET.H - All Rights Reserved</p>
+            <p>© 2023 GARNET.H - All Rights Reserved</p>
         </div>
     </footer>
 </body>
